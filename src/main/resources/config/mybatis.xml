@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!--  开启驼峰匹配：完成经典的数据库命名到java属性的映射
+                          相当于去掉数据中的名字的下划线，和java进行匹配
+        -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+    <!-- 配置别名 -->
+    <typeAliases>
+        <typeAlias type="com.banyuan.blog.model.User" alias="User"/>
+    </typeAliases>
+</configuration>
