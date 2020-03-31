@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <!DOCTYPE mapper
+                PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+                "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+        <!-- 命名空间namespace:指定接口全类名 -->
+<mapper namespace="com.banyuan.blog.mapper.UserMapper">
+<select id="selectUserByName" resultType="com.banyuan.blog.model.User">
+    select id,name,gender,age,address,qq,email from user where name=#{name}
+</select>
+</mapper>

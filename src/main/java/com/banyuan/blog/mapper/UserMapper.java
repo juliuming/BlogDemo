@@ -1,4 +1,4 @@
-package com.banyuan.blog.dao;
+package com.banyuan.blog.mapper;
 
 import com.banyuan.blog.model.User;
 import org.apache.ibatis.annotations.Mapper;

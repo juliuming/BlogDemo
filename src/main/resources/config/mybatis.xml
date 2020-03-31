@@ -11,6 +11,6 @@
     </settings>
     <!-- 配置别名 -->
     <typeAliases>
-        <typeAlias type="com.banyuan.blog.model.User" alias="User"/>
+        <package name="com.banyuan.blog.model"/>
     </typeAliases>
 </configuration>

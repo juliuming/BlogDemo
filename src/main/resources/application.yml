@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8081
 
 spring:
   datasource:
@@ -9,5 +9,5 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
 
 mybatis:
-  mapper-locations: classpath:com/banyuan/blog/dao/*.xml
+  mapper-locations: classpath:com/banyuan/blog/mapper/*.xml
   config-location: classpath:config/mybatis.xml
