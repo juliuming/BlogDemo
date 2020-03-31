@@ -21,7 +21,6 @@ public class BlogApplication {
         BlogMapper blogMapper = context.getBean(BlogMapper.class);
         User user = userMapper.selectUserByName("Durant");
         List<Blog> list = blogMapper.selectBlogByUsername("Durant1988");
-        Blog blog = blogMapper.selectBlogById(1);
         System.out.println(user);
         System.out.println(list);
     }
