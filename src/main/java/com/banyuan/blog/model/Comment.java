@@ -3,16 +3,13 @@ package com.banyuan.blog.model;
 import lombok.Data;
 
 import java.util.Date;
-import java.util.List;
 
 @Data
-public class Blog {
-    private String id;
-    private String title;
+public class Comment {
+    private int id;
     private int userId;
+    private int blogId;
     private String content;
     private Date time;
-    private int commentNumber;
     private User user;
-    private List<Comment> commentList;
 }

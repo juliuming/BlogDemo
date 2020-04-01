@@ -8,9 +8,8 @@
                           相当于去掉数据中的名字的下划线，和java进行匹配
         -->
         <setting name="mapUnderscoreToCamelCase" value="true"/>
+
     </settings>
     <!-- 配置别名 -->
-    <typeAliases>
-        <package name="com.banyuan.blog.model"/>
-    </typeAliases>
+
 </configuration>

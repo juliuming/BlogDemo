@@ -5,5 +5,5 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface UserMapper {
-    public User selectUserByName(String name);
+    public User selectUserByNickName(String nickName);
 }
