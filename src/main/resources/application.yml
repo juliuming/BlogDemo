@@ -11,3 +11,9 @@ spring:
 mybatis:
   mapper-locations: classpath:com/banyuan/blog/mapper/*.xml
   config-location: classpath:config/mybatis.xml
+
+Security:
+  permittedUrls:
+    - /login
+    - /index
+    - /static/**
