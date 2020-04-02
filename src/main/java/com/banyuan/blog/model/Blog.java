@@ -7,7 +7,7 @@ import java.util.List;
 
 @Data
 public class Blog {
-    private String id;
+    private int id;
     private String title;
     private int userId;
     private String content;

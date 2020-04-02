@@ -49,4 +49,11 @@
              user ON blog.user_id = user.id
         WHERE user.nick_name = #{nickName}
     </select>
+
+    <select id="selectBlogByUserId" resultType="com.banyuan.blog.model.Blog">
+        SELECT blog.id AS id, title, user_id, content, time, comment_num
+        FROM blog
+                 LEFT JOIN user ON user_id = user.id
+        WHERE user.username = #{username}
+    </select>
 </mapper>

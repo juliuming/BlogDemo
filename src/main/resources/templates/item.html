@@ -47,7 +47,7 @@
     <div class="col-sm-8 blog-item">
       <div class="page-header">
         <h2 th:text="${blog.title}">Cum sociis</h2>
-        <p class="blog-post-meta" th:text="${#dates.format(blog.createdTime, 'yyyy-MM-dd')}">2015年2月3日 标签：<a href="#">Web开发</a></p>
+        <p class="blog-post-meta" th:text="${#dates.format(blog.time, 'yyyy-MM-dd')}">2015年2月3日 标签：<a href="#">Web开发</a></p>
       </div>
 
       <div class="post-content" th:utext="${blog.content}">
@@ -118,7 +118,7 @@
             </form>
         </div>
         <ul class="list-unstyled">
-          <li class="clearfix content comment-item" th:each="comment: ${comments}">
+          <li class="clearfix content comment-item" th:each="comment: ${commentList}">
             <img src="/img/catty.jpeg" alt="" class="avatar pull-left">
             <!--<div class="blog-post" th:each="blog: ${blogs.content}">
               <h3 class="blog-post-title"><a th:text="${blog.title}" th:href="@{'/blogs/' + ${blog.id}}">"${blog.title}"</a></h3>
@@ -127,7 +127,7 @@
               -->
             <p>
               <a href="#" th:text="${comment.userId}">"${comment.userId}",</a>
-              <span class="text-muted date" th:text="${comment.createdTime}"> "${comment.createdTime}"</span>
+              <span class="text-muted date" th:text="${comment.time}"> "${comment.createdTime}"</span>
               <textarea disabled th:text="${comment.content}">"${comment.content}"</textarea>
             </p>
           </li>

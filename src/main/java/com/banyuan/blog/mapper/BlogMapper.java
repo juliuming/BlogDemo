@@ -8,5 +8,6 @@ import java.util.List;
 @Mapper
 public interface BlogMapper {
     public Blog selectBlogById(int id);
+    public List<Blog> selectBlogByUserName(String username);
     public List<Blog> selectBlogByNickName(String nikName);
 }

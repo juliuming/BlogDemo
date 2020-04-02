@@ -7,8 +7,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class IndexController {
     @GetMapping("/index")
-    @ResponseBody
     public String welcome(){
-        return "welcome!";
+        return "index.html";
     }
 }
