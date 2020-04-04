@@ -22,6 +22,6 @@
                qq,
                email
         FROM user
-        WHERE nick_name = #{username}
+        WHERE username = #{username}
     </select>
 </mapper>

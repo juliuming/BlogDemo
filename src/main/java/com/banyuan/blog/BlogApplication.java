@@ -19,7 +19,7 @@ public class BlogApplication {
 
     public static void main(String[] args) {
         ApplicationContext context = SpringApplication.run(BlogApplication.class, args);
-        UserMapper userMapper = context.getBean(UserMapper.class);
+        /*UserMapper userMapper = context.getBean(UserMapper.class);
         BlogMapper blogMapper = context.getBean(BlogMapper.class);
         CommentMapper commentMapper = context.getBean(CommentMapper.class);
         User user = userMapper.selectUserByUsername("Durant1988");
@@ -27,6 +27,6 @@ public class BlogApplication {
         List<Comment> commentList = commentMapper.selectCommentByBlogId(1);
         System.out.println(commentList);
         System.out.println(user);
-        System.out.println(blog);
+        System.out.println(blog);*/
     }
 }

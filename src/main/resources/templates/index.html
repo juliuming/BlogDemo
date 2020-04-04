@@ -7,10 +7,19 @@
   <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <link rel="stylesheet" href="/css/about.css">
   <link rel="stylesheet" href="/css/footer.css">
-  <script src="//cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
-  <script src="//cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src="webjars/jquery/1.11.2/jquery.min.js"></script>
+  <script src="webjars/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
 <body>
+<!--
+<script>
+  var xmlhttp = new XMLHttpRequest();
+  var jwt = $.cookie('jwt');
+  var jwtHead = $.cookie('jwt.Head');
+  xmlhttp.setRequestHeader("authorization",jwtHead+jwt);
+</script>
+-->
+
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
@@ -32,7 +41,7 @@
             <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li class="dropdown-header">管理</li>
-            <li><a href="#">博客信息</a></li>
+            <li><a href="http://localhost:8081/blog/Durant1988">博客信息</a></li>
             <li><a href="#">创建博文</a></li>
             <li><a href="#">博客管理</a></li>
             <li class="divider"></li>

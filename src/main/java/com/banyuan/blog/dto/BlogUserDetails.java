@@ -1,19 +1,16 @@
 package com.banyuan.blog.dto;
 
 import com.banyuan.blog.model.User;
-import com.banyuan.blog.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.stereotype.Component;
 
 import java.util.Collection;
 
-public class blogUserDetails implements UserDetails {
+public class BlogUserDetails implements UserDetails {
     private User user;
 
-    public blogUserDetails(User user) {
+    public BlogUserDetails(User user) {
         this.user = user;
     }
 
@@ -50,5 +47,9 @@ public class blogUserDetails implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
+    }
+
+    public User getUser(){
+        return this.user;
     }
 }

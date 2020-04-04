@@ -12,8 +12,17 @@ mybatis:
   mapper-locations: classpath:com/banyuan/blog/mapper/*.xml
   config-location: classpath:config/mybatis.xml
 
-Security:
-  permittedUrls:
-    - /login
-    - /index
-    - /static/**
+security:
+  permittedurls:
+    urls:
+        - /login
+        - /index
+        - /static/**
+        - /**/*.*
+        - /webjars/**
+
+jwt:
+  secret: dafsfsafdsa
+  expiration: 1209600000
+  tokenHeader: Athentication
+  tokenHead: bearer
