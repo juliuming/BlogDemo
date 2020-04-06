@@ -43,7 +43,7 @@
     </select>
 
     <select id="selectBlogByNickName" resultType="com.banyuan.blog.model.Blog">
-        SELECT blog.id AS id, title, user_id, content, time, comment_num
+        SELECT blog.id AS idg, title, tag, user_id, content, time, comment_num
         FROM blog
                  LEFT JOIN
              user ON blog.user_id = user.id
@@ -51,9 +51,14 @@
     </select>
 
     <select id="selectBlogByUsername" resultType="com.banyuan.blog.model.Blog">
-        SELECT blog.id AS id, title, user_id, content, time, comment_num
+        SELECT blog.id AS id, title, tag, user_id, content, time, comment_num
         FROM blog
                  LEFT JOIN user ON user_id = user.id
         WHERE user.username = #{username}
+    </select>
+
+    <select id="selectAllEsBlogs" resultType="com.banyuan.blog.noqsql.elasticsearch.document.EsBlog">
+        SELECT blog.id id, title, tag,content, nick_name auther, time
+        FROM blog left join user on blog.user_id = user.id;
     </select>
 </mapper>

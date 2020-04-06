@@ -7,6 +7,10 @@ spring:
     username: root
     password: banyuan
     driver-class-name: com.mysql.cj.jdbc.Driver
+  data:
+    elasticsearch:
+      repositories:
+        enabled: true
 
 mybatis:
   mapper-locations: classpath:com/banyuan/blog/mapper/*.xml
