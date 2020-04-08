@@ -61,4 +61,14 @@
         SELECT blog.id id, title, tag,content, nick_name auther, time
         FROM blog left join user on blog.user_id = user.id;
     </select>
+
+    <select id="selectBlogsByIdList" parameterType="java.util.List" resultType="com.banyuan.blog.noqsql.elasticsearch.document.EsBlog">
+        select SELECT blog.id id, title, tag,content, nick_name auther, time
+        FROM blog left join user on blog.user_id = user.id
+        <where>
+            <foreach collection="ids" item="item">
+            blog.id = item
+            </foreach>
+        </where>
+    </select>
 </mapper>

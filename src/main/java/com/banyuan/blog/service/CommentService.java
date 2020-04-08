@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface CommentService{
-    List<Comment> showComments(int blogId);
+    List<Comment> showComments(Long blogId);
 }

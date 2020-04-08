@@ -26,6 +26,11 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
+    public List<EsBlog> getEsBlogsByIdList(List<Long> ids) {
+       return blogMapper.selectBlogsByIdList(ids);
+    }
+
+    @Override
     public int createAndSaveBlog(int userId, Blog blog) {
         int success = 0;
         try{

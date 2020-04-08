@@ -14,7 +14,7 @@ public class CommentServiceImpl implements CommentService {
     CommentMapper commentMapper;
 
     @Override
-    public List<Comment> showComments(int blogId) {
+    public List<Comment> showComments(Long blogId) {
         return commentMapper.selectCommentByBlogId(blogId);
     }
 }

@@ -7,6 +7,6 @@ import java.util.List;
 
 @Mapper
 public interface CommentMapper {
-    List<Comment> selectCommentByBlogId(int blogId);
+    List<Comment> selectCommentByBlogId(Long blogId);
     List<Comment> selectCommentByUserId(int userId);
 }

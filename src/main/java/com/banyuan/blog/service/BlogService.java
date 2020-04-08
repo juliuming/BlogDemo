@@ -15,4 +15,6 @@ public interface BlogService {
     List<Blog> showUserBlogs(String userName);
 
     int createAndSaveBlog(int userId,Blog blog);
+
+    List<EsBlog> getEsBlogsByIdList(List<Long> ids);
 }
