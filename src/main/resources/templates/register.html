@@ -5,8 +5,8 @@
   <title>用户注册</title>
   <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <link rel="stylesheet" href="/css/account.css">
-  <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
-  <script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src="webjars/jquery/1.11.2/jquery.min.js"></script>
+  <script src="webjars/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -34,15 +34,19 @@
   </div>
 </nav>
 
-<form class="form-signin" method="post" action="/register">
-  <div class="alert alert-warning">
-    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-    <strong>Warning!</strong> 登陆出错了,请稍后再试!
-  </div>
+<form class="form-signin" method="post" action="http://localhost:8081/register">
   <h2 class="form-signin-heading">用户注册</h2>
     <input type="email" id="email" class="form-control" placeholder="电子邮件" required="" autofocus="">
     <input type="text" id="name" class="form-control" placeholder="用户名" required="" autofocus="">
     <input type="password" id="password" class="form-control" placeholder="密码" required="">
+    <input type="text" id="nickName" class="form-control" placeholder="昵称" required="">
+    <div id="gender">
+    <input type="radio" name="gender">男
+    <input type="radio" name="gender">女
+    </div>
+    <input type="text" id="age" class="form-control" placeholder="年龄" required="">
+    <input type="text" id="address" class="form-control" placeholder="地址" required="">
+    <input type="text" id="qq" class="form-control" placeholder="密码" required="">
     <button class="btn btn-primary btn-block" type="submit">确定</button>
 </form>
 

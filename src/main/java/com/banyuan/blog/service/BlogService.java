@@ -10,6 +10,8 @@ import java.util.List;
 
 @Repository
 public interface BlogService {
+    Blog getBlogById(Long id);
+
     List<EsBlog> getAllEsBlogs();
 
     List<Blog> showUserBlogs(String userName);

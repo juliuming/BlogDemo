@@ -21,13 +21,36 @@ public class UserManageController {
         return "login.html";
     }
 
-    @PostMapping("/login")
-    Model loginSubmit(@RequestParam String username,
-                 @RequestParam String password,
-                 Model model,
-                 HttpServletResponse response) {
-        String token = userService.logIn(username, password);
-        model.addAttribute("Jwtoken",token);
-        return model;
+    @GetMapping("/create")
+    String create(){
+        return "create.html";
+    }
+
+    @GetMapping("/edit")
+    String edit(){
+        return "edit.html";
+    }
+
+    @GetMapping("/picView")
+    String picView(){
+        return "picview.html";
+    }
+
+    @GetMapping("/register")
+    String register(@RequestParam String email,
+                    @RequestParam String name,
+                    @RequestParam String password,
+                    @RequestParam String nickName,
+                    @RequestParam String gender,
+                    @RequestParam int age,
+                    @RequestParam String address,
+                    @RequestParam String qq){
+
+        return "register.html";
+    }
+
+    @GetMapping("upload")
+    String upload(){
+        return "upload.html";
     }
 }

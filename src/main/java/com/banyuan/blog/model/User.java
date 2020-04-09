@@ -17,4 +17,5 @@ public class User {
     private String qq;
     private String email;
     private List<Blog> blogList;
+    private int status;
 }

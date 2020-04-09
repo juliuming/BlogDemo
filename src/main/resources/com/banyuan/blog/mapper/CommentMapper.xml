@@ -5,13 +5,23 @@
 
 <!-- 命名空间namespace:指定接口全类名 -->
 <mapper namespace="com.banyuan.blog.mapper.CommentMapper">
-    <select id="selectCommentByBlogId" resultType="com.banyuan.blog.model.Comment">
-        SELECT id,
+    <resultMap id="CommentMap" type="com.banyuan.blog.model.Comment" autoMapping="true">
+        <id property="id" column="id"/>
+        <association property="user" javaType="com.banyuan.blog.model.User">
+            <result property="id" column="user_id"/>
+            <result property="nickName" column="nick_name"/>
+        </association>
+    </resultMap>
+
+    <select id="selectCommentByBlogId" resultMap="CommentMap">
+        SELECT comment.id,
                user_id,
                blog_id,
                content,
-               time
-        FROM comment
+               time,
+               user.id as user_id,
+               user.nick_name
+        FROM comment LEFT JOIN user ON comment.user_id=user.id
         WHERE blog_id = #{blogId}
     </select>
 

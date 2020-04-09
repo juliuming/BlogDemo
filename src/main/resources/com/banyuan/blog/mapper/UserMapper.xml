@@ -20,7 +20,8 @@
                age,
                address,
                qq,
-               email
+               email,
+               status
         FROM user
         WHERE username = #{username}
     </select>

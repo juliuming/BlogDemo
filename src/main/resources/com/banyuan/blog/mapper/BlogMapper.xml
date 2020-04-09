@@ -10,10 +10,6 @@
         <association property="user" javaType="com.banyuan.blog.model.User" columnPrefix="user_" autoMapping="true">
             <id property="id" column="id"/>
         </association>
-        <collection property="commentList" ofType="com.banyuan.blog.model.Comment" columnPrefix="comment_"
-                    autoMapping="true">
-            <id property="id" column="id"/>
-        </collection>
     </resultMap>
     <select id="selectBlogById" resultMap="selectBlogById">
         SELECT blog.id AS     id,
@@ -21,12 +17,6 @@
                blog.user_id   user_id,
                blog.content   content,
                blog.time      time,
-               comment_num,
-               c.id           comment_id,
-               c.user_id      comment_user_id,
-               c.blog_id      comment_blog_id,
-               c.content      comment_content,
-               c.time         comment_time,
                user.id        user_id,
                user.username  user_username,
                user.password  user_password,
@@ -38,7 +28,6 @@
                user.email     user_email
         FROM blog
                  JOIN user ON blog.user_id = user.id
-                 LEFT JOIN comment c ON c.blog_id = blog.id
         WHERE blog.id = #{id}
     </select>
 

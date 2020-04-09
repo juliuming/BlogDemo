@@ -46,7 +46,7 @@ public class BlogUserDetails implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return true;
+        return user.getStatus()==1;
     }
 
     public User getUser(){

@@ -15,6 +15,11 @@ public class BlogServiceImpl implements BlogService {
     BlogMapper blogMapper;
 
     @Override
+    public Blog getBlogById(Long id) {
+        return blogMapper.selectBlogById(id);
+    }
+
+    @Override
     public List<EsBlog> getAllEsBlogs() {
         return blogMapper.selectAllEsBlogs();
     }
@@ -27,15 +32,15 @@ public class BlogServiceImpl implements BlogService {
 
     @Override
     public List<EsBlog> getEsBlogsByIdList(List<Long> ids) {
-       return blogMapper.selectBlogsByIdList(ids);
+        return blogMapper.selectBlogsByIdList(ids);
     }
 
     @Override
     public int createAndSaveBlog(int userId, Blog blog) {
         int success = 0;
-        try{
-            success = blogMapper.insertBlog(userId,blog);
-        }catch (Exception e){
+        try {
+            success = blogMapper.insertBlog(userId, blog);
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return success;

@@ -19,14 +19,14 @@ public class BlogApplication {
 
     public static void main(String[] args) {
         ApplicationContext context = SpringApplication.run(BlogApplication.class, args);
-        /*UserMapper userMapper = context.getBean(UserMapper.class);
-        BlogMapper blogMapper = context.getBean(BlogMapper.class);
+        //UserMapper userMapper = context.getBean(UserMapper.class);
+        // BlogMapper blogMapper = context.getBean(BlogMapper.class);
         CommentMapper commentMapper = context.getBean(CommentMapper.class);
-        User user = userMapper.selectUserByUsername("Durant1988");
-        Blog blog = blogMapper.selectBlogById(1);
-        List<Comment> commentList = commentMapper.selectCommentByBlogId(1);
+        // User user = userMapper.selectUserByUsername("Durant1988");
+        // Blog blog = blogMapper.selectBlogById(1);
+        List<Comment> commentList = commentMapper.selectCommentByBlogId(1L);
         System.out.println(commentList);
-        System.out.println(user);
-        System.out.println(blog);*/
+        //System.out.println(user);
+        //System.out.println(blog);
     }
 }

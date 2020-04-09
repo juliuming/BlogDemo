@@ -8,13 +8,11 @@ import com.banyuan.blog.service.CommentService;
 import com.banyuan.blog.service.UserService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -69,5 +67,15 @@ public class BlogController {
         httpSession.setAttribute("user", user);
 
         return "redirect:list.html";
+    }
+
+    @GetMapping("/item")
+    String item(@RequestParam Long blogId,
+                Model model){
+        Blog blog = blogService.getBlogById(blogId);
+        List<Comment> commentList = commentService.showComments(blogId);
+        model.addAttribute("blog",blog);
+        model.addAttribute("commentList",commentList);
+        return "item.html";
     }
 }
