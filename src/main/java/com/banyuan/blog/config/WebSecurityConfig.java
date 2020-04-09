@@ -87,7 +87,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public UserDetailsService userDetailsService() {
         return username -> {
             User user = userService.getUserByUsername(username);
-            if (user != null) {
+            if (user != null && user.getStatus()!=0) {
                 return new BlogUserDetails(user);
             }
             throw new UsernameNotFoundException("username not found");

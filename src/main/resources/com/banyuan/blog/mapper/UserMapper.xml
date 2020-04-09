@@ -7,7 +7,8 @@
 <mapper namespace="com.banyuan.blog.mapper.UserMapper">
     <resultMap id="selectUserByUsername" type="com.banyuan.blog.model.User" autoMapping="true">
         <id property="id" column="id"/>
-        <collection property="blogList" javaType="java.util.ArrayList" ofType="com.banyuan.blog.model.Blog" column="username=username"
+        <collection property="blogList" javaType="java.util.ArrayList" ofType="com.banyuan.blog.model.Blog"
+                    column="username=username"
                     select="com.banyuan.blog.mapper.BlogMapper.selectBlogByUsername" autoMapping="true"/>
     </resultMap>
 
@@ -25,4 +26,13 @@
         FROM user
         WHERE username = #{username}
     </select>
+
+    <insert id="insertUser">
+        INSERT INTO user (username, password, nick_name, gender, age, address, qq, email, status)
+        VALUES (#{username}, #{password}, #{nickName}, #{gender}, #{age}, #{address}, #{qq}, #{email},0)
+    </insert>
+
+    <update id="activate">
+        UPDATE user SET status=1 WHERE username=#{username}
+    </update>
 </mapper>
